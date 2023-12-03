@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  backend-api:
+    image: node:18
+    working_dir: /www
+    tty: true
+    command: bash -c "npm install && npm run start:dev"
+    container_name: backend-api
+    volumes:
+      - .:/www
+    ports:
+      - "3503:3000"
+
+  db-api:
+    image: postgres:15.3
+    container_name: db-api
+    ports:
+      - "5501:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass123
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:
+  node_modules:
+  data:
+    driver: "local"
