@@ -4,12 +4,12 @@ import {
   PrimaryColumn,
   CreateDateColumn,
   UpdateDateColumn,
-  Generated, OneToMany,
+  Generated, ManyToOne, JoinColumn,
 } from "typeorm";
-import { Product } from "../product/product.entity";
+import { Category } from "../category/category.entity";
 
 @Entity()
-export class Category {
+export class Product {
   @PrimaryColumn('uuid')
   @Generated('uuid')
   public id: string;
@@ -23,6 +23,16 @@ export class Category {
   @Column()
   public description: string;
 
+  @Column('decimal', { precision: 10, scale: 4 })
+  public price: number;
+
+  @Column({ name: 'category_id', nullable: false })
+  public categoryId: string;
+
+  @ManyToOne(() => Category)
+  @JoinColumn({ name: 'category_id' })
+  public category: Category;
+
   @CreateDateColumn({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP(6)' })
   public created: Date;
 
@@ -32,7 +42,4 @@ export class Category {
     onUpdate: 'CURRENT_TIMESTAMP(6)',
   })
   public updated: Date;
-
-  @OneToMany(() => Product, (product) => product.category)
-  products: Product[];
 }

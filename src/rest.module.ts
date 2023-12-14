@@ -1,10 +1,14 @@
 import { Module } from "@nestjs/common";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { HealthModule } from "./modules/health/health.module";
-import { ConfigModule, ConfigService } from "@nestjs/config";
-import { CategoryModule } from "./modules/category/category.module";
 import { join } from "path";
+import { TypeOrmModule } from "@nestjs/typeorm";
+import { ConfigModule, ConfigService } from "@nestjs/config";
+import { HealthModule } from "./modules/health/health.module";
+import { CategoryModule } from "./modules/category/category.module";
+import { ProductModule } from "./modules/product/product.module";
+import { Category } from "./modules/category/category.entity";
+import { Product } from "./modules/product/product.entity";
 
+console.log(join(__dirname, '/src/**/*.entity.{ts, js}'));
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
@@ -19,7 +23,7 @@ import { join } from "path";
         database: configService.get('DATABASE_NAME'),
         migrationsTableName: 'migration',
         migrations: [join(__dirname, '../migrations/*{.ts,.js}')],
-        entities: [join(__dirname, '../src/**/*.entity.{ts}')],
+        entities: [Category, Product],
 
         ssl: false,
       }),
@@ -27,6 +31,7 @@ import { join } from "path";
     }),
     HealthModule,
     CategoryModule,
+    ProductModule,
   ],
 })
 

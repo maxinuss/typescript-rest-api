@@ -35,10 +35,10 @@ export class CategoryService {
     }
   }
 
-  async update(id: string, categoryDto: CategoryDto): Promise<Category|false> {
+  async update(id: string, categoryDto: CategoryDto): Promise<Category|null> {
     try {
       const category = await this.categoryRepository.preload({ id, ...categoryDto });
-      if (!category) return false;
+      if (!category) return null;
 
       return await this.categoryRepository.save(category);
     } catch (error: any) {
