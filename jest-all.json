@@ -1,0 +1,19 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testMatch": ["<rootDir>/test/**/*.spec.{ts,js}"],
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest",
+    "^.+\\.[t|j]sx?$": "babel-jest"
+  },
+  "transformIgnorePatterns": [
+    "<rootDir>/node_modules/"
+  ],
+  "coverageDirectory": "./test/coverage",
+  "coverageThreshold": {
+    "global": {
+      "lines": 80
+    }
+  }
+}
