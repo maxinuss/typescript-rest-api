@@ -1,0 +1,840 @@
+{
+	"info": {
+		"_postman_id": "a2b97332-29d5-4ece-a042-98b803c1243d",
+		"name": "NestJs Typescript Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4537006"
+	},
+	"item": [
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "List categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3503/category",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"category"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3503/category",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "409"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"199-wV+UIPEzM2KHTiOKGBKjA1Xkl0U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:55:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\",\n        \"name\": \"House\",\n        \"image\": \"http://image.com\",\n        \"description\": \"products for your house\",\n        \"created\": \"2023-12-14T11:36:16.912Z\",\n        \"updated\": \"2023-12-14T11:36:16.912Z\"\n    },\n    {\n        \"id\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n        \"name\": \"Kitchen\",\n        \"image\": \"http://image.com\",\n        \"description\": \"products for your kitchen\",\n        \"created\": \"2023-12-14T13:52:52.350Z\",\n        \"updated\": \"2023-12-14T13:53:56.741Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"House\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your house\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3503/category/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"category",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create category",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"House\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your house\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3503/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"category",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "201"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c9-IrY1n2lLteR3VpJheEe/zRhRFJM\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:52:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"House\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your house\",\n    \"id\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n    \"created\": \"2023-12-14T13:52:52.350Z\",\n    \"updated\": \"2023-12-14T13:52:52.350Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update category",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Kitchen\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your kitchen\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3503/category/49b27a65-e095-4ac2-984d-82da1b02f5a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"category",
+								"49b27a65-e095-4ac2-984d-82da1b02f5a8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update category",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Kitchen\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your kitchen\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3503/category/49b27a65-e095-4ac2-984d-82da1b02f5a8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"category",
+										"49b27a65-e095-4ac2-984d-82da1b02f5a8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-JYHIfiam+MowlYUhlvObGqKq98U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:53:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n    \"name\": \"Kitchen\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your kitchen\",\n    \"created\": \"2023-12-14T13:52:52.350Z\",\n    \"updated\": \"2023-12-14T13:53:56.741Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get category by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3503/category/49b27a65-e095-4ac2-984d-82da1b02f5a8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"category",
+								"49b27a65-e095-4ac2-984d-82da1b02f5a8"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get category by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3503/category/49b27a65-e095-4ac2-984d-82da1b02f5a8",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"category",
+										"49b27a65-e095-4ac2-984d-82da1b02f5a8"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "205"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cd-JYHIfiam+MowlYUhlvObGqKq98U\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:54:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n    \"name\": \"Kitchen\",\n    \"image\": \"http://image.com\",\n    \"description\": \"products for your kitchen\",\n    \"created\": \"2023-12-14T13:52:52.350Z\",\n    \"updated\": \"2023-12-14T13:53:56.741Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete category by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3503/category/bcf1f984-6a94-4e8c-94f1-641ddaf5d25e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"category",
+								"bcf1f984-6a94-4e8c-94f1-641ddaf5d25e"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete category by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3503/category/bcf1f984-6a94-4e8c-94f1-641ddaf5d25e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"category",
+										"bcf1f984-6a94-4e8c-94f1-641ddaf5d25e"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-PVQD/E0HAqMH9FRBYNXdIixTtCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:54:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3503/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3503/product/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "953"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b9-ofNFAM19vKS9K/uW0dNQoj+iSiw\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:56:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": \"16961739-65cd-4a64-bd78-b0a86d2aff63\",\n        \"name\": \"Chair\",\n        \"image\": \"http://image.com\",\n        \"description\": \"Perfect plastic chair\",\n        \"price\": 20.0001,\n        \"categoryId\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\",\n        \"created\": \"2023-12-14T11:39:52.147Z\",\n        \"updated\": \"2023-12-14T11:44:20.811Z\",\n        \"category\": {\n            \"id\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\",\n            \"name\": \"House\",\n            \"image\": \"http://image.com\",\n            \"description\": \"products for your house\",\n            \"created\": \"2023-12-14T11:36:16.912Z\",\n            \"updated\": \"2023-12-14T11:36:16.912Z\"\n        }\n    },\n    {\n        \"id\": \"e1c77daf-dd8f-4e60-8018-be8eeaad10e0\",\n        \"name\": \"Oven\",\n        \"image\": \"http://image.com\",\n        \"description\": \"Perfect oven\",\n        \"price\": 145,\n        \"categoryId\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n        \"created\": \"2023-12-14T13:56:45.348Z\",\n        \"updated\": \"2023-12-14T13:56:45.348Z\",\n        \"category\": {\n            \"id\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n            \"name\": \"Kitchen\",\n            \"image\": \"http://image.com\",\n            \"description\": \"products for your kitchen\",\n            \"created\": \"2023-12-14T13:52:52.350Z\",\n            \"updated\": \"2023-12-14T13:53:56.741Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Oven\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect oven\",\n    \"price\": 145.0,\n    \"categoryId\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3503/product/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"product",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Create product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Oven\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect oven\",\n    \"price\": 145.0,\n    \"categoryId\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3503/product/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"product",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "253"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fd-AS2K8IDkwQOkgVyegXV3mirAhWc\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:56:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"name\": \"Oven\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect oven\",\n    \"price\": 145,\n    \"categoryId\": \"49b27a65-e095-4ac2-984d-82da1b02f5a8\",\n    \"id\": \"e1c77daf-dd8f-4e60-8018-be8eeaad10e0\",\n    \"created\": \"2023-12-14T13:56:45.348Z\",\n    \"updated\": \"2023-12-14T13:56:45.348Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Chair\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect plastic chair\",\n    \"price\": 30.0,\n    \"categoryId\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3503/product/16961739-65cd-4a64-bd78-b0a86d2aff63",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"product",
+								"16961739-65cd-4a64-bd78-b0a86d2aff63"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Update product",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Chair\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect plastic chair\",\n    \"price\": 30.0,\n    \"categoryId\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3503/product/16961739-65cd-4a64-bd78-b0a86d2aff63",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"product",
+										"16961739-65cd-4a64-bd78-b0a86d2aff63"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"106-mPF0Tf0vfmwmgVDc76CXi59rLX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:57:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"16961739-65cd-4a64-bd78-b0a86d2aff63\",\n    \"name\": \"Chair\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect plastic chair\",\n    \"price\": 30,\n    \"categoryId\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\",\n    \"created\": \"2023-12-14T11:39:52.147Z\",\n    \"updated\": \"2023-12-14T13:57:28.009Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3902/product/63d17d40a25ba36684635105",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3902",
+							"path": [
+								"product",
+								"63d17d40a25ba36684635105"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get product by id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3503/product/16961739-65cd-4a64-bd78-b0a86d2aff63",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"product",
+										"16961739-65cd-4a64-bd78-b0a86d2aff63"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"106-mPF0Tf0vfmwmgVDc76CXi59rLX0\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:57:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": \"16961739-65cd-4a64-bd78-b0a86d2aff63\",\n    \"name\": \"Chair\",\n    \"image\": \"http://image.com\",\n    \"description\": \"Perfect plastic chair\",\n    \"price\": 30,\n    \"categoryId\": \"40063b12-4791-4f7e-a5f5-4bd289e1064b\",\n    \"created\": \"2023-12-14T11:39:52.147Z\",\n    \"updated\": \"2023-12-14T13:57:28.009Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Delete product by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3503/product/60f679ea-8d4f-475b-87bd-5c38b620bcd6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3503",
+							"path": [
+								"product",
+								"60f679ea-8d4f-475b-87bd-5c38b620bcd6"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Delete product by id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3503/product/60f679ea-8d4f-475b-87bd-5c38b620bcd6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3503",
+									"path": [
+										"product",
+										"60f679ea-8d4f-475b-87bd-5c38b620bcd6"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "23"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17-PVQD/E0HAqMH9FRBYNXdIixTtCA\""
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 14 Dec 2023 13:58:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"raw\": [],\n    \"affected\": 1\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
