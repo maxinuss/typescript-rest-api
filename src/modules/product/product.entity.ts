@@ -7,6 +7,7 @@ import {
   Generated, ManyToOne, JoinColumn,
 } from "typeorm";
 import { Category } from "../category/category.entity";
+import { DecimalTransformer } from "../../common/DecimalTransformer";
 
 @Entity()
 export class Product {
@@ -26,14 +27,7 @@ export class Product {
   @Column('decimal', {
     precision: 10,
     scale: 2,
-    transformer : {
-      to (value)  {
-        return value ;
-      },
-      from (value)  {
-        return +value ;
-      },
-    },
+    transformer : new DecimalTransformer,
   })
   public price: number;
 
