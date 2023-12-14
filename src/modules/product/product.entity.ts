@@ -23,7 +23,18 @@ export class Product {
   @Column()
   public description: string;
 
-  @Column('decimal', { precision: 10, scale: 4 })
+  @Column('decimal', {
+    precision: 10,
+    scale: 2,
+    transformer : {
+      to (value)  {
+        return value ;
+      },
+      from (value)  {
+        return +value ;
+      },
+    },
+  })
   public price: number;
 
   @Column({ name: 'category_id', nullable: false })
