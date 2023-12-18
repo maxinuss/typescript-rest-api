@@ -77,7 +77,7 @@ describe('ProductService', () => {
   });
 
   describe('create should fails', () => {
-    it('should create a new product and fail', async () => {
+    it('should try to create a new product and fail', async () => {
       const productDto: ProductDto = {
         name: 'New Product',
         image: 'https://image.com',
@@ -169,5 +169,4 @@ describe('ProductService', () => {
       expect(result).toEqual(deleteResult);
     });
   });
-
 });

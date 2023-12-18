@@ -52,6 +52,20 @@ describe('CategoryService', () => {
     });
   });
 
+  describe('create should fails', () => {
+    it('should try to create a new category and fail', async () => {
+      const categoryDto: CategoryDto = { name: 'New Category', image: 'https://image.com', description: 'description' };
+      const createdCategory: Category = { id: '1', name: 'New Category' } as Category;
+
+      jest.spyOn(categoryRepository, 'create').mockReturnValue(new Category());
+      const logErrorSpy = jest.spyOn(categoryService['log'], 'error');
+
+      const result = await categoryService.create(categoryDto);
+
+      expect(logErrorSpy).toHaveBeenCalledTimes(1);
+    });
+  });
+
   describe('update', () => {
     it('should update a category', async () => {
       const categoryId = '1';
