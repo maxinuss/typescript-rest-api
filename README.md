@@ -27,3 +27,8 @@
 - Run ```npm run migration:generate ./src/migrations/MIGRATION_NAME_HERE``` (ej: npm run migration:generate ./src/migrations/product-offer-field-added)
 - Run ```npm run migration:run```
 - Run ```exit``` to exit from the container.
+
+### How to run the unit test
+- Run ```make backend```(Linux & Mac) or ```docker exec -it backend-api bash``` to access to the Node container
+- Run ```npm run test```
+- Run ```exit``` to exit from the container.
