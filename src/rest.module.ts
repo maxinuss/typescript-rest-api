@@ -7,10 +7,12 @@ import { CategoryModule } from "./modules/category/category.module";
 import { ProductModule } from "./modules/product/product.module";
 import { Category } from "./modules/category/category.entity";
 import { Product } from "./modules/product/product.entity";
+import { AuthModule } from "./modules/auth/auth.module";
 
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
+    AuthModule,
     TypeOrmModule.forRootAsync({
       imports: [ConfigModule],
       useFactory: (configService: ConfigService) => ({

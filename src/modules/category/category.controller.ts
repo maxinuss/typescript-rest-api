@@ -1,6 +1,7 @@
-import { Body, Controller, Delete, Get, Param, Patch, Post } from "@nestjs/common";
+import { Body, Controller, Delete, Get, Param, Patch, Post, UseGuards } from "@nestjs/common";
 import { CategoryService } from "./category.service";
 import { CategoryDto } from "./category.dto";
+import { AuthGuard } from "@nestjs/passport";
 
 @Controller('category')
 export class CategoryController {
@@ -8,9 +9,11 @@ export class CategoryController {
     private readonly categoryService: CategoryService,
   ) { }
 
+  @UseGuards(AuthGuard('jwt'))
   @Get('/')
   async list() {
     return this.categoryService.findAll();
+
   }
 
   @Post('/')
