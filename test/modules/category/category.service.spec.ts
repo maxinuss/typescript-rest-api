@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import { CategoryService } from "../../../src/modules/category/category.service";
 import { Category } from "../../../src/modules/category/category.entity";
 import { CategoryDto } from "../../../src/modules/category/category.dto";
-import {LogService} from "../../../src/common/services/log.service";
+import { LogService } from "../../../src/common/services/log.service";
 
 
 describe('CategoryService', () => {
