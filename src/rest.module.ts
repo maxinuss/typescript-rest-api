@@ -8,7 +8,6 @@ import { ProductModule } from "./modules/product/product.module";
 import { Category } from "./modules/category/category.entity";
 import { Product } from "./modules/product/product.entity";
 
-console.log(join(__dirname, '/src/**/*.entity.{ts, js}'));
 @Module({
   imports: [
     ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),

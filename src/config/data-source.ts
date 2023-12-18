@@ -5,7 +5,7 @@ import * as dotenv from "dotenv";
 
 const dotenvPath = path.resolve(process.cwd(), '.env');
 const result = dotenv.config({ path: dotenvPath });
-if (result.error) { /* do nothing */ }
+if (result.error) { }
 
 export const AppDataSource = new DataSource({
   type: 'postgres' as any,
